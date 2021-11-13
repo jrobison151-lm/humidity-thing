@@ -19,7 +19,6 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint \"src/**/*.js\" \"test-*/**/*.js\" ",
     "pre-commit": "yarn lint && yarn test",
-    "synth": "node ./scripts/synth.js",
     "test": "yarn test:unit && yarn test:acceptance",
     "test:acceptance": "jest test-acceptance",
     "test:unit": "jest test-unit"

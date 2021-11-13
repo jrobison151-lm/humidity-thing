@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  shell: bash
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      python: 3.x
+      nodejs: 14
+    commands:
+      - "npm install --global yarn"
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - "yarn"
+  build:
+    on-failure: ABORT
+    commands:
+      - "yarn lint"
+      - "yarn test:unit"
+      - "yarn test:acceptance"
+  post_build:
+    on-failure: ABORT
+    commands:
+      - "echo done!"
